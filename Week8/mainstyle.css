@@ -1,0 +1,34 @@
+span{
+    color:white;
+    background-color:lavenderblush;
+  
+}
+.purpleColor {
+    color: indigo;
+    font-family: Georgia;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  span.purpleColor {
+    color: indigo;
+    font-family: Georgia;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .pinkColor {
+    color:lightcoral;
+    font-family: Calibri;
+    font-size:22px ;
+    font-weight: bold;
+  }
+
+  body {background-color: lavenderblush;}
+
+  #specificLink {
+    font-style: oblique;
+    color: maroon;
+  }
+
+  #header {
+    color: palevioletred; font-size: 250%; text-shadow: black 2px 2px;}
