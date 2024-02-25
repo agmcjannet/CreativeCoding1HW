@@ -1,34 +1,73 @@
 <html>
-<title>Math Game</title>
-
+    <title>mathgame</title>
 <head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 100px;
+        }
+
+        #main-container {
+            text-align: center;
+        }
+
+        .aligncenter {
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        td {
+            padding: 10px;
+        }
+    </style>
     <script>
         var actualAnswer;
         var number1;
         var number2;
+        var correctAnswers = 0;
+        var incorrectAnswers = 0;
+        var totalQuestions = 0;
 
         function printQuestion() {
             number1 = Math.floor(Math.random() * 10);
             number2 = Math.floor(Math.random() * 10);
-            actualAnswer = number1 + number2;
-            document.getElementById("theQuestion").innerHTML = "What is " + number1 + "+" + number2 + "?";
+            actualAnswer = number1 * number2;
+            document.getElementById("theQuestion").innerHTML = "What is " + number1 + "*" + number2 + "?";
+            totalQuestions++;
         }
 
         function checkAnswer() {
             var answer = document.getElementById("txtAnswer").value;
             if (answer == actualAnswer) {
                 document.getElementById("finalResult").innerHTML = "Good job!";
-                printQuestion();
-
+                correctAnswers++;
             } else {
                 document.getElementById("finalResult").innerHTML = "Try Again!";
+                incorrectAnswers++;
+            }
+
+            if (totalQuestions == 10) {
+            
+                document.getElementById("finalResult").innerHTML = "Finished! \n You answered " + correctAnswers +
+                    " questions correctly and " + incorrectAnswers + " questions incorrectly. Your percentage: " +
+                    ((correctAnswers / totalQuestions) * 100).toFixed(2) + "%";
+            } else {
+                printQuestion();
             }
         }
 
         function runGame() {
-            for (var i = 1; i < 6; i++) {
-                document.getElementById("message").innerHTML += "<h" + i + ">Welcome to our game!!!</h" + i + "></p>";
+            for (var i = 1; i < 4; i++) {
+                document.getElementById("message").innerHTML += "<h" + i + ">Welcome to the multiplication game!</h" + i + "></p>";
             }
+            document.getElementById("message").innerHTML += "<br>";
             printQuestion();
         }
         runGame();
@@ -36,30 +75,38 @@
 </head>
 
 <body onload="runGame();">
-    
-    <img src="mathimage.jpg" style="width:50%;"> <br>
 
-    <table>
-        <tr>
-            <td colspan="2">
-                <div id="message"></div>
-            </td>
-        </tr>
-        
-        <tr>
-            <td colspan="2">
-                <div id="theQuestion"></div>
-            </td>
-        </tr>
+ 
+    <p style="text-align: center; font-size: 400%;">Math Game!</p>
+
+    <p class="aligncenter">
+        <img src="mathimage.jpg" width="20%" alt="centered image" />
+    </p>
+
+    <div class="aligncenter" id="message"></div>
+
+    <p class="aligncenter">
+        <br>Practice your multiplication! <br> Scroll all the way down to see if you got the answer correct <br> <br>
+    </p>
+
+    <div id="theQuestion"></div>
+    <table class="aligncenter">
         <tr>
             <td>Your answer</td>
             <td><input type="text" id="txtAnswer"></td>
         </tr>
         <tr>
-            <td colspan="2"><button id="btnSubmit" onClick="checkAnswer();">Submit</button></td>
+            <td colspan="2"><button id="btnSubmit" onClick="checkAnswer();">Check Answer</button></td>
         </tr>
     </table>
     <div id="finalResult"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    Play the multiplication game to practice your math skills!
+<br>
+    <h2><a href="mathgamepg2.html" style="text-decoration-line: none; color: palevioletred;">Hint!</a></h2>
 </body>
 
 </html>
