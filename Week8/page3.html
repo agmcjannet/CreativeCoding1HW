@@ -2,18 +2,26 @@
     <title>page 3</title>
     <link rel="stylesheet" type="text/css" href="mainstyle.css">
 <head>
+    <style>
+        input:invalid {
+          border: 2px solid red;
+        }
+      </style>
+
     <script>
         function getData()
         {
-            var fName= document.getElementById("FName").value;
-            var lName= document.getElementById("LName").value;
-            var phone = document.getElementById("Phone").value;
-
+            var FName= document.getElementById("FName").value; 
+            var LName= document.getElementById("LName").value;
+            var Address= document.getElementById("Address").value;
+            var City= document.getElementById("City").value;
+            var State = document.getElementById("State").value;
+            var Zip= document.getElementById("Zip").value;
+            var Email= document.getElementById("Email").value;
+            var Phone = document.getElementById("Phone").value;
             
 
-            window.alert("your info: " + fName 
-            + lName 
-            + phone);
+            alert("Essential Information: " + FName + "\n" + LName + "\n" + Address + "\n" + City + "\n" + State + "\n" + Zip + "\n" + Email + "\n" + Phone);
         }
         </script>
 </head>
@@ -22,18 +30,20 @@
    
     <br>
     <h2>Please fill our your information to adopt your furry friend!</h2> <br>
+    If you only fill out the required information, we will email or call you to fill out the rest, thanks! <br>
 
     <br>
   
-    <form action="nextPage.html" type="POST">
-        First Name: <input type="text" id="FName"><br>
-        Last Name: <input type="text" id="LName"><br>
-        Address (No. P.O. Box):<input type="text" id="Address"><br>
-        City:<input type="text" id="City"><br>
-        State:<input type="text" id="State"><br>
-        Zip Code:<input type="text" id="Zip"><br>
-        Email: <input type="text" id="Email"> <br>
-        Phone Number: <input type="text" id="Phone"> <br>    
+    <form action="index.html" type="POST">
+    
+        First Name: <input type="text" id="FName" required ><br>
+        Last Name: <input type="text" id="LName" required><br>
+        Address (No. P.O. Box):<input type="text" id="Address" required><br>
+        City:<input type="text" id="City" required><br>
+        State:<input type="text" id="State" required><br>
+        Zip Code:<input type="text" id="Zip" required><br>
+        Email: <input type="text" id="Email" required> <br>
+        Phone Number: <input type="text" id="Phone" required> <br>    
 
 <br>
 
@@ -121,12 +131,13 @@ What is the vetrenarian that you plan on using for this pet?
 </form>
 
 <br>
-<img src="Paw Prints Background.png" alt="Snow" style="width:100%;">
-<br>
+
 <h2>Click <a href="page2.html"style="text-decoration:none">here</a> to view the cats!</h2>
 Warning! Your application will not save!<br>
 <br>
 <h2><a href="index.html"id="specificLink">Home Page</a></h2>
+
+<h2><a href="page4.html">Contact Us</a></h2>
 
 </body>
 </html>

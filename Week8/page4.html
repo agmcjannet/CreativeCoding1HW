@@ -1,31 +1,75 @@
 <html>
-    <title>What is your info</title>
-    <head>
-        <script>
+    <title>page 3</title>
+    <link rel="stylesheet" type="text/css" href="mainstyle.css">
+<head>
+    <style>
+        input:invalid {
+          border: 2px solid red;
+        }
+      </style>
+    <style>
+        input:focus {
+          background-color: yellow;
+        }
+        </style>
+    <style>
+            h1   {color: palevioletred; font-size: 1000%; text-shadow: black 5px 5px;}
+        h2    {color: indigo;}
+        h3 {color: palevioletred; font-size: 500%; text-shadow: black 2px 2px}
+    </style>
+    <script>
         function getData()
         {
-            var name = document.getElementById("name").value;
-            var phone = document.getElementById("phone").value;
+            var FName= document.getElementById("FName").value; 
+            var LName= document.getElementById("LName").value;
+            var Email= document.getElementById("Email").value;
+            var Phone = document.getElementById("Phone").value;
+            var Message = document.getElementById("Message").value;
+            var Terms = document.getElementById("Terms").value;
 
-            
-
-            window.alert("your info: " + name + phone);
+            alert("Information: " + FName + "\n" + LName + "\n" + Email + "\n" + Phone + "\n" + Message + "\n" + Terms);
         }
         </script>
-        <!-- external stylesheet using bootstrap via CDN-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head>
-    <body style="background-color: burlywood;">
-        <h3>What is your contact information?</h3>
-        <br>
-        <form style="background-color: bisque">
-            <input type="text" value = " " id="name">name<br>
-            <input type="text" value=" " id="phone">phone<br>
-          
-            <button id="btnSubmit" class="btn btn-primary" onClick="getData();">Submit My Info</button>
-        </form>
-        <br>
+</head>
+<body>
+    <img src="CatHeader.jpg" style="width:100%;"> <br>
    
-        <a href="page2.html">Cats</a> | <a href="index.html">Home</a>
-    </body>
+    <h3>Contact Us</h3>
+    <h2>Let's get in touch! <br>
+        Fill out all the sections in this form to send us a message.<br>
+        We can't wait to hear from you and we'll get back to you soon!</h2> <br>
+
+  
+    <form action="index.html" type="POST">
+    
+        First Name: <input type="text" id="FName" required> <br>
+        Last Name: <input type="text" id="LName" required> <br>
+       <br>
+        Email: <input type="text" id="Email" required> <br>
+        Phone Number: <input type="text" id="Phone" required> <br>  
+        <br>
+        Message: <input type="text" id="Message" required> <br>
+        <br>
+        Terms and Conditions: <br>
+        Please only contact us with inquiries about our available cats, adoption forms, and application requirements. <br>
+        We will either call or email you using the information you have provided. <br>
+        Do you agree to these terms? Please type yes or no in the box: <input type="text" id="Terms" required> <br>
+
+
+<br>
+
+
+
+<br>
+    <button id="btnSubmit" class="btn btn-primary" onClick="getData();">Submit My Info</button>
+</form>
+
+<br>
+
+<h2>Click <a href="page2.html"style="text-decoration:none">here</a> to view the cats!</h2>
+<h2>Click <a href="page3.html"id="specificLink"style="text-decoration:none">here</a> to fill out an adoption form!</h2>
+<h2><a href="index.html"id="specificLink">Home Page</a></h2>
+<h2><a href="page4.html">Contact Us</a></h2>
+
+</body>
 </html>
