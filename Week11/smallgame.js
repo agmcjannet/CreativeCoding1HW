@@ -1,3 +1,5 @@
+//----------------------------   Variables   ---------------------------------------
+
 // Character variables
 var characterX = 75;
 var characterY = 75;
@@ -8,9 +10,14 @@ var s = 83;
 var a = 65;
 var d = 68;
 
+//-----------------------------   Set Up   ----------------------------------------
+
 function setup() {
   createCanvas(720, 720);
 }
+
+
+//-----------------------------    Draw     ---------------------------------------
 
 function draw() {
   background(51, 0, 77);
@@ -42,6 +49,8 @@ function draw() {
     text("You Win!", width / 2 - 50, height / 2 - 20);
   }
 }
+
+//-----------------------------   Functions   ------------------------------------
 
 function createBorders(thickness) {
   noStroke();
