@@ -134,6 +134,7 @@ var clues = [
 
 ];
 
+var checkButton;
 
 //----------------------------------Set Up----------------------------------------
 
@@ -162,6 +163,11 @@ function setup() {
   for (var i = 1; i <= 69; i++) {
     dropdown.option(i);
   }
+
+  // Button for checking answers
+  checkButton = createButton('Check Answers');
+  checkButton.position(350, 630);
+  checkButton.mousePressed(checkAnswers);
 }
 
 function crosswordTextBoxes(i, j, placeholderText) {
@@ -204,6 +210,35 @@ function draw() {
 
 
 //----------------------------------Functions----------------------------------------
+
+// Function to check answers and highlight incorrect boxes
+function checkAnswers() {
+  for (var i = 0; i < 15; i++) {
+    for (var j = 0; j < 15; j++) {
+      if (!BlackedOut(i, j)) {
+        var userAnswer = textBoxes[i][j].value().toUpperCase();
+        var correctAnswer = getCorrectAnswer(i, j);
+
+        // Compare the user's answer with the correct answer
+        if (userAnswer !== correctAnswer) {
+          // If incorrect, change background color to red
+          textBoxes[i][j].style('background-color', 'salmon');
+        } else {
+          // If correct, reset background color
+          textBoxes[i][j].style('background-color', '');
+        }
+      }
+    }
+  }
+}
+
+// Function to get correct answers based on position
+function getCorrectAnswer(row, col) {
+  // You need to implement this function based on your crossword clues
+  // Return the correct answer for the specified row and column
+  // For example, you can use a 2D array to store correct answers or any other data structure.
+  // Replace this comment with your implementation.
+}
 
 
 function drawTitleText() {
@@ -417,3 +452,4 @@ if (row === 0 && col === 0) {
   
   
 }
+
