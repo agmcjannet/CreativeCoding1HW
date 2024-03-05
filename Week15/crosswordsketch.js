@@ -135,22 +135,23 @@ var clues = [
 ];
 
 var correctAnswers = [
-  ['C', 'B', 'S', '', '', 'E', 'T', 'C', 'H', '', 'B', 'S', 'I', 'D', 'E'],
-  ['H', 'I', 'N', 'T', '', 'L', 'O', 'R', 'I', '', 'R', 'A', 'T', 'I', 'O'],
-  ['E', 'B', 'A', 'Y', '', 'A', 'R', 'A', 'P', '', 'I', 'B', 'S', 'E', 'N'],
-  ['Z', 'I', 'P', 'P', 'O', 'L', 'I', 'G', 'H', 'T', 'E', 'R', '', '', ''],
-  ['', '', 'O', 'E', 'R', '', '', '', 'O', 'A', 'F', 'I', 'S', 'H', ''],
-  ['S', 'Q', 'U', 'A', 'T', 'J', 'U', 'M', 'P', 'S', '', 'N', 'Y', 'E', 'T'],
-  ['K', 'A', 'T', '', 'E', 'R', 'M', 'A', '', '', 'L', 'A', 'M', 'A', 'R'],
-  ['I', 'T', 'O', '', 'G', 'R', 'A', 'N', 'I', 'T', 'E', '', 'P', 'R', 'O'],
-  ['M', 'A', 'F', 'I', 'A', '', '', 'O', 'D', 'O', 'M', '', 'A', 'S', 'L'],
-  ['P', 'R', 'I', 'M', '', 'Z', 'E', 'R', 'O', 'M', 'O', 'S', 'T', 'E', 'L'],
-  ['', 'I', 'T', 'A', 'L', 'I', 'C', '', '', '', 'N', 'T', 'H', '', ''],
-  ['', '', '', 'N', 'O', 'T', 'H', 'I', 'N', 'G', 'D', 'O', 'I', 'N', 'G'],
-  ['D', 'E', 'L', 'A', 'Y', '', 'O', 'D', 'O', 'R', '', 'C', 'Z', 'A', 'R'],
-  ['O', 'M', 'E', 'G', 'A', '', 'E', 'L', 'S', 'A', '', 'K', 'E', 'N', 'O'];
-  ['M', 'O', 'D', 'E', 'L', '', 'D', 'Y', 'E', 'D', '', '', 'R', 'A', 'W']
-];
+    ['C', 'B', 'S', '', '', 'E', 'T', 'C', 'H', '', 'B', 'S', 'I', 'D', 'E'],
+    ['H', 'I', 'N', 'T', '', 'L', 'O', 'R', 'I', '', 'R', 'A', 'T', 'I', 'O'],
+    ['E', 'B', 'A', 'Y', '', 'A', 'R', 'A', 'P', '', 'I', 'B', 'S', 'E', 'N'],
+    ['Z', 'I', 'P', 'P', 'O', 'L', 'I', 'G', 'H', 'T', 'E', 'R', '', '', ''],
+    ['', '', 'O', 'E', 'R', '', '', '', 'O', 'A', 'F', 'I', 'S', 'H', ''],
+    ['S', 'Q', 'U', 'A', 'T', 'J', 'U', 'M', 'P', 'S', '', 'N', 'Y', 'E', 'T'],
+    ['K', 'A', 'T', '', 'E', 'R', 'M', 'A', '', '', 'L', 'A', 'M', 'A', 'R'],
+    ['I', 'T', 'O', '', 'G', 'R', 'A', 'N', 'I', 'T', 'E', '', 'P', 'R', 'O'],
+    ['M', 'A', 'F', 'I', 'A', '', '', 'O', 'D', 'O', 'M', '', 'A', 'S', 'L'],
+    ['P', 'R', 'I', 'M', '', 'Z', 'E', 'R', 'O', 'M', 'O', 'S', 'T', 'E', 'L'],
+    ['', 'I', 'T', 'A', 'L', 'I', 'C', '', '', '', 'N', 'T', 'H', '', ''],
+    ['', '', '', 'N', 'O', 'T', 'H', 'I', 'N', 'G', 'D', 'O', 'I', 'N', 'G'],
+    ['D', 'E', 'L', 'A', 'Y', '', 'O', 'D', 'O', 'R', '', 'C', 'Z', 'A', 'R'],
+    ['O', 'M', 'E', 'G', 'A', '', 'E', 'L', 'S', 'A', '', 'K', 'E', 'N', 'O'],
+    ['M', 'O', 'D', 'E', 'L', '', 'D', 'Y', 'E', 'D', '', '', 'R', 'A', 'W']
+  ];
+  
 
 //----------------------------------Set Up----------------------------------------
 
@@ -164,7 +165,6 @@ function setup() {
     textBoxes[i] = [];
     for (var j = 0; j < 15; j++) {
       if (!BlackedOut(i, j)) {
-        // Set initial text as the placeholder
         var placeholderText = getInitialText(i, j);
         crosswordTextBoxes(i, j, placeholderText);
       }
@@ -180,12 +180,13 @@ function setup() {
     dropdown.option(i);
   }
 
-  // Button for checking answers
+  // Check Answers
   checkButton = createButton('Check Answers');
   checkButton.position(430, 590);
   checkButton.mousePressed(checkAnswers);
 }
 
+    //Text boxes for letters
 function crosswordTextBoxes(i, j, placeholderText) {
   textBoxes[i][j] = createInput('');
   textBoxes[i][j].position(110 + j * gridSize + 2, 110 + i * gridSize + 2);
@@ -227,20 +228,16 @@ function draw() {
 
 //----------------------------------Functions----------------------------------------
 
-// Function to check answers and highlight incorrect boxes
+// Check answers, red box if not
 function checkAnswers() {
   for (var i = 0; i < 15; i++) {
     for (var j = 0; j < 15; j++) {
       if (!BlackedOut(i, j)) {
         var userAnswer = textBoxes[i][j].value().toUpperCase();
         var correctAnswer = getCorrectAnswer(i, j);
-
-        // Compare the user's answer with the correct answer
         if (userAnswer !== correctAnswer) {
-          // If incorrect, change background color to red
           textBoxes[i][j].style('background-color', 'salmon');
         } else {
-          // If correct, reset background color
           textBoxes[i][j].style('background-color', '');
         }
       }
@@ -265,6 +262,8 @@ function drawTitleText() {
   text('no. 0302', 573, 70);
   textSize(24);
   text('Clues:', 135, 598);
+  textSize(8)
+  text('Wrong answers will \nappear red', 535, 590)
 }
 
 function drawCrosswordBorder() {
@@ -465,4 +464,3 @@ if (row === 0 && col === 0) {
   
   
 }
-

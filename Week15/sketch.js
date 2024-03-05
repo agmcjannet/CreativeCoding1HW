@@ -57,8 +57,8 @@ var blackedOutSquares = [
 var dropdown;
 var dropdownWidth = 50;
 var dropdownHeight = 30;
-var dropdownX = 350;
-var dropdownY = 587;
+var dropdownX = 225;
+var dropdownY = 583;
 
 // Clues
 var clues = [
@@ -134,13 +134,29 @@ var clues = [
 
 ];
 
-var checkButton;
+var correctAnswers = [
+  ['C', 'B', 'S', '', '', 'E', 'T', 'C', 'H', '', 'B', 'S', 'I', 'D', 'E'],
+  ['H', 'I', 'N', 'T', '', 'L', 'O', 'R', 'I', '', 'R', 'A', 'T', 'I', 'O'],
+  ['E', 'B', 'A', 'Y', '', 'A', 'R', 'A', 'P', '', 'I', 'B', 'S', 'E', 'N'],
+  ['Z', 'I', 'P', 'P', 'O', 'L', 'I', 'G', 'H', 'T', 'E', 'R', '', '', ''],
+  ['', '', 'O', 'E', 'R', '', '', '', 'O', 'A', 'F', 'I', 'S', 'H', ''],
+  ['S', 'Q', 'U', 'A', 'T', 'J', 'U', 'M', 'P', 'S', '', 'N', 'Y', 'E', 'T'],
+  ['K', 'A', 'T', '', 'E', 'R', 'M', 'A', '', '', 'L', 'A', 'M', 'A', 'R'],
+  ['I', 'T', 'O', '', 'G', 'R', 'A', 'N', 'I', 'T', 'E', '', 'P', 'R', 'O'],
+  ['M', 'A', 'F', 'I', 'A', '', '', 'O', 'D', 'O', 'M', '', 'A', 'S', 'L'],
+  ['P', 'R', 'I', 'M', '', 'Z', 'E', 'R', 'O', 'M', 'O', 'S', 'T', 'E', 'L'],
+  ['', 'I', 'T', 'A', 'L', 'I', 'C', '', '', '', 'N', 'T', 'H', '', ''],
+  ['', '', '', 'N', 'O', 'T', 'H', 'I', 'N', 'G', 'D', 'O', 'I', 'N', 'G'],
+  ['D', 'E', 'L', 'A', 'Y', '', 'O', 'D', 'O', 'R', '', 'C', 'Z', 'A', 'R'],
+  ['O', 'M', 'E', 'G', 'A', '', 'E', 'L', 'S', 'A', '', 'K', 'E', 'N', 'O'];
+  ['M', 'O', 'D', 'E', 'L', '', 'D', 'Y', 'E', 'D', '', '', 'R', 'A', 'W']
+];
 
 //----------------------------------Set Up----------------------------------------
 
 
 function setup() {
-  createCanvas(655, 675);
+  createCanvas(655, 680);
   gridSize = 455 / 15;
 
   // Text Boxes
@@ -166,7 +182,7 @@ function setup() {
 
   // Button for checking answers
   checkButton = createButton('Check Answers');
-  checkButton.position(350, 630);
+  checkButton.position(430, 590);
   checkButton.mousePressed(checkAnswers);
 }
 
@@ -234,10 +250,7 @@ function checkAnswers() {
 
 // Function to get correct answers based on position
 function getCorrectAnswer(row, col) {
-  // You need to implement this function based on your crossword clues
-  // Return the correct answer for the specified row and column
-  // For example, you can use a 2D array to store correct answers or any other data structure.
-  // Replace this comment with your implementation.
+  return correctAnswers[row][col];
 }
 
 
@@ -250,8 +263,8 @@ function drawTitleText() {
   text('based off The New York Times crossword puzzle', 290, 40);
   text('by Andrea Carla Micheals', 452, 55);
   text('no. 0302', 573, 70);
-  textSize(28);
-  text('Clues:', 250, 603);
+  textSize(24);
+  text('Clues:', 135, 598);
 }
 
 function drawCrosswordBorder() {
