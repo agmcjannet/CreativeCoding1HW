@@ -279,11 +279,10 @@ function displayClue(selectedValue) {
   textSize(20);
   fill(0);
 
-  // Check if a value is selected
   if (selectedValue) {
     var index = int(selectedValue) - 1;
     if (index >= 0 && index < clues.length) {
-      // Display the clue
+    
       text(clues[index], 16, 635);
       
 
