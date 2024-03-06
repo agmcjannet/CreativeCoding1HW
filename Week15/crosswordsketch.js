@@ -1,5 +1,11 @@
 //----------------------------------Variables----------------------------------------
 
+// Timer
+var timerIsRunning = true;
+var startTime;
+var elapsedTime = 0;
+
+
 // Text Boxes
 var input;
 var textBoxes = [];
@@ -198,7 +204,15 @@ function crosswordTextBoxes(i, j, placeholderText) {
   textBoxes[i][j].input(function () {
     textBoxes[i][j].value(textBoxes[i][j].value().toUpperCase());
   });
+
+ // Start timer when open
+    startTime = millis();
+  
 }
+
+  
+
+  
 
 
 
@@ -223,27 +237,47 @@ function draw() {
 
   // Display the clue
   displayClue(selectedValue);
+    // Calculate elapsed time if the timer is running
+  if (timerIsRunning) {
+    elapsedTime = floor((millis() - startTime) / 1000); // elapsed time in seconds
+  }
 }
+
 
 
 //----------------------------------Functions----------------------------------------
 
 // Check answers, red box if not
 function checkAnswers() {
-  for (var i = 0; i < 15; i++) {
-    for (var j = 0; j < 15; j++) {
-      if (!BlackedOut(i, j)) {
-        var userAnswer = textBoxes[i][j].value().toUpperCase();
-        var correctAnswer = getCorrectAnswer(i, j);
-        if (userAnswer !== correctAnswer) {
-          textBoxes[i][j].style('background-color', 'salmon');
-        } else {
-          textBoxes[i][j].style('background-color', '');
+    // Stop the timer when the "Check Answers" button is pressed
+    timerIsRunning = false;
+  
+    var allAnswersCorrect = true;
+  
+    for (var i = 0; i < 15; i++) {
+      for (var j = 0; j < 15; j++) {
+        if (!BlackedOut(i, j)) {
+          var userAnswer = textBoxes[i][j].value().toUpperCase();
+          var correctAnswer = getCorrectAnswer(i, j);
+          if (userAnswer !== correctAnswer) {
+            textBoxes[i][j].style('background-color', 'salmon');
+            allAnswersCorrect = false;
+          } else {
+            textBoxes[i][j].style('background-color', '');
+          }
         }
       }
     }
+  
+    // Congratulations message only if all answers are correct
+    if (allAnswersCorrect) {
+      var minutes = floor(elapsedTime / 60);
+      var seconds = floor(elapsedTime % 60);
+      alert('Congratulations! Puzzle solved in ' + nf(minutes, 2) + ':' + nf(seconds, 2));
+    }
   }
-}
+  
+  
 
 // Function to get correct answers based on position
 function getCorrectAnswer(row, col) {
