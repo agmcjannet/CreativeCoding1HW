@@ -6,7 +6,7 @@ the crossword. Adding the text boxes was next and proved to be difficult to get 
 I had initially made notes for the exact pixel measurements of the grid, canvas, ect.
 but the way it processed didn't always follow that math, like the text boxes on the grid.
 
-I wanted to keep the color palette simple. Crosswords are usually printed on newspapers, so I 
+I wanted to keep the color palette simple. Crosswords are usually printed on newspaper, so I 
 made the background grey to emulate that black and white nature of the printed game. The text
 was next and I added a title and credits to the original crossword creator. Even simple things 
 like this took quite a bit of time when formatting because even though I made notes of the math
