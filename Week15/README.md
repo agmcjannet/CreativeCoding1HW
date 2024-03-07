@@ -1,6 +1,6 @@
 ## Here is my Week 15 final project, a crossword puzzle!
 
-I began this project by finding an old crossword puzzle with the clues by the New York Times. 
+I began this project by finding an old crossword puzzle and clues by the New York Times. 
 Using that as a template, I researched how to create a grid and made a grid for the squares of
 the crossword. Adding the text boxes was next and proved to be difficult to size. I had initially 
 made notes about the exact pixel measurements of all the grid and the canvas, but the way it 
