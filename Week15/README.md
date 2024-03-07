@@ -1,4 +1,4 @@
-# Here is my Week 15 final project, a crossword puzzle!
+## Here is my Week 15 final project, a crossword puzzle!
 
 I began this project by finding an old crossword puzzle with the clues by the New York Times. 
 Using that as a template, I researched how to create a grid and made a grid for the squares of
@@ -15,8 +15,8 @@ with those notes.
 
 Next, I added the blacked out squares after doing more research on arrays and how I could create 
 them using a row and column system. This helped to just plug in where the squares should be, but 
-got a bit confusing at times when I would forget that the first row was technically row 0, not row 
-1. Again, the formatting got a bit off and often had to be adjusted pixel by pixel. However, one of
+got a bit confusing at times when I would forget that the first row was technically row zero, not row 
+one. Again, the formatting got a bit off and often had to be adjusted pixel by pixel. However, one of
 the biggest challenges I came across was adding the numbers to the squares to correspond with the 
 across and down clues. 
 
