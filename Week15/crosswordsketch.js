@@ -273,7 +273,7 @@ function checkAnswers() {
     if (allAnswersCorrect) {
       var minutes = floor(elapsedTime / 60);
       var seconds = floor(elapsedTime % 60);
-      alert('Congratulations! Puzzle solved in ' + nf(minutes, 2) + ':' + nf(seconds, 2));
+      alert('Congratulations! You solved the puzzle in ' + nf(minutes, 2) + ':' + nf(seconds, 2) + '!');
     }
   }
   
