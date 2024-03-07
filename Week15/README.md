@@ -27,7 +27,7 @@ orders and failure everytime to get the text to appear over the box, I found I c
 text within the boxes. This allowed the text to disappear once the player typed in the box and then 
 reappear if they removed their letter. It also made the text slightly lighter and even closer to the 
 NYT crossword games on their app. While doing all of these things I tried to keep my 'draw' section 
-full of as many functions as possible to keep the code cleaner and more condensed. 
+full of as many calls to functions as possible to keep the code cleaner and more condensed. 
 
 The most tedious part was adding the clues that would appear when selecting the corresponding dropdown.
 I struggled to figure out how to make the dropdown say either across or down for each individual clue,
