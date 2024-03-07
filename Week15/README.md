@@ -40,7 +40,9 @@ One of my favorite features of the New York Times crossword games in their app i
 that allows you to check to see if your answers are correct and if they're not it'll mark which ones
 are wrong. I did this in my project by making the box appear red if the answers from the array I 
 created were wrong. If the correct letter was inputed and then the button clicked the square would 
-return to white/correct. 
+return to white/correct. I also added a function that would show a congratuations pop up statimg 
+how long the puzzle took. This also required a bit of research to figure out how to calculate the time, 
+have it begin when the site loads and calculate both the minutes and seconds. 
 
 This project was extremely challenging to apply all that we have learned in this semester of Creative
 Coding I. Trying to make my code function as best it could while having to sacrifice some of my more 
