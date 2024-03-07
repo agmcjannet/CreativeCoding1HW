@@ -2,9 +2,9 @@
 
 I began this project by finding an old crossword puzzle and clues by the New York Times. 
 Using that as a template, I researched how to create a grid and made a grid for the squares of
-the crossword. Adding the text boxes was next and proved to be difficult to size. I had initially 
-made notes about the exact pixel measurements of all the grid and the canvas, but the way it 
-processed didn't always follow that math, like the text boxes on the grid.
+the crossword. Adding the text boxes was next and proved to be difficult to get the size right. 
+I had initially made notes for the exact pixel measurements of the grid, canvas, ect.
+but the way it processed didn't always follow that math, like the text boxes on the grid.
 
 I wanted to keep the color palette simple. Crosswords are usually printed on newspapers, so I 
 made the background grey to emulate that black and white nature of the printed game. The text
