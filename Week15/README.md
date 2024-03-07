@@ -1,12 +1,12 @@
 ## Here is my Week 15 final project, a crossword puzzle!
 
-I began this project by finding an old crossword puzzle with the clues by the New York Times. 
+I began this project by finding an old crossword puzzle and clues by the New York Times. 
 Using that as a template, I researched how to create a grid and made a grid for the squares of
-the crossword. Adding the text boxes was next and proved to be difficult to size. I had initially 
-made notes about the exact pixel measurements of all the grid and the canvas, but the way it 
-processed didn't always follow that math, like the text boxes on the grid.
+the crossword. Adding the text boxes was next and proved to be difficult to get the size right. 
+I had initially made notes for the exact pixel measurements of the grid, canvas, ect.
+but the way it processed didn't always follow that math, like the text boxes on the grid.
 
-I wanted to keep the color palette simple. Crosswords are usually printed on newspapers, so I 
+I wanted to keep the color palette simple. Crosswords are usually printed on newspaper, so I 
 made the background grey to emulate that black and white nature of the printed game. The text
 was next and I added a title and credits to the original crossword creator. Even simple things 
 like this took quite a bit of time when formatting because even though I made notes of the math
@@ -27,7 +27,7 @@ orders and failure everytime to get the text to appear over the box, I found I c
 text within the boxes. This allowed the text to disappear once the player typed in the box and then 
 reappear if they removed their letter. It also made the text slightly lighter and even closer to the 
 NYT crossword games on their app. While doing all of these things I tried to keep my 'draw' section 
-full of as many functions as possible to keep the code cleaner and more condensed. 
+full of as many calls to functions as possible to keep the code cleaner and more condensed. 
 
 The most tedious part was adding the clues that would appear when selecting the corresponding dropdown.
 I struggled to figure out how to make the dropdown say either across or down for each individual clue,
@@ -40,7 +40,9 @@ One of my favorite features of the New York Times crossword games in their app i
 that allows you to check to see if your answers are correct and if they're not it'll mark which ones
 are wrong. I did this in my project by making the box appear red if the answers from the array I 
 created were wrong. If the correct letter was inputed and then the button clicked the square would 
-return to white/correct. 
+return to white/correct. I also added a function that would show a congratuations pop up statimg 
+how long the puzzle took. This also required a bit of research to figure out how to calculate the time, 
+have it begin when the site loads and calculate both the minutes and seconds. 
 
 This project was extremely challenging to apply all that we have learned in this semester of Creative
 Coding I. Trying to make my code function as best it could while having to sacrifice some of my more 
