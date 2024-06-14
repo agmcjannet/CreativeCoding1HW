@@ -1,34 +1,93 @@
-span{
-    color:white;
-    background-color:lavenderblush;
-  
+body {
+  background-color: #E2EDF3;
+  margin: 0;
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
 }
-.purpleColor {
-    color: indigo;
-    font-family: Georgia;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  span.purpleColor {
-    color: indigo;
-    font-family: Georgia;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  .pinkColor {
-    color:lightcoral;
-    font-family: Calibri;
-    font-size:22px ;
-    font-weight: bold;
-  }
 
-  body {background-color: lavenderblush;}
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
 
-  #specificLink {
-    font-style: oblique;
-    color: maroon;
-  }
+.image-container {
+  flex: 1;
+  margin-right: 20px;
+}
 
-  #header {
-    color: palevioletred; font-size: 250%; text-shadow: black 2px 2px;}
+.text-container {
+  flex: 2;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.header h1 {
+  color: #0d2f5c;
+  font-size: 28px;
+}
+
+.quote {
+  background-color: #F2F5F8;
+  padding: 20px;
+  border-left: 5px solid #21609a;
+  margin-bottom: 20px;
+  font-kerning: normal;
+  word-spacing: 0.3em;
+}
+
+.quote-text {
+  font-size: 24px;
+  font-style: italic;
+  color: #596180;
+  font-family: "Montserrat", sans-serif;
+}
+
+.content {
+  line-height: 1.45em;
+  text-align: justify;
+  font-kerning: normal;
+}
+
+.content p {
+  margin-bottom: 15px;
+  text-indent: 1.5em;
+  font-family: "Libre Baskerville", Georgia, serif;
+}
+
+.content .secondtolast-paragraph {
+  font-weight: bold;
+}
+
+.content .last-paragraph {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.image {
+  width: 100%;
+  max-width: 500px;
+}
+
+.secondtolast-paragraph a {
+  text-decoration: none;
+  color: black;
+}
+
+.secondtolast-paragraph a:hover {
+  color: grey;
+  text-decoration: underline;
+}
